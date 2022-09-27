@@ -38,6 +38,7 @@ class DocCnpj:
   def __str__(self):
     return self.format()
     
+    
   def validate(self,document):
     validateCNPJ = CNPJ()
     return validateCNPJ.validate(document)
