@@ -1,4 +1,5 @@
 from validate_docbr import CNPJ 
+# validação e mascara do CNPJ
 class DocCnpj:
   def __init__(self,document):
     if self.validate(document):

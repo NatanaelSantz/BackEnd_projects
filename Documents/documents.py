@@ -3,7 +3,7 @@ from Cnpj import DocCnpj
 from Cnh import DocCnh
 from pis import DocPis
 type_doc = input("Digite o tipo de documento: ").upper()
-
+## Cria a validação e o factore que gerencia qual validação de qual documento será feito
 class Document:
   @staticmethod
   def create_document(document):

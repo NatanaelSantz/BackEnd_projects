@@ -1,5 +1,5 @@
 from validate_docbr import CPF
-
+#Validação e mascara de CPF
 class DocCpf:
   def __init__(self, document):
     if self.validate(document):

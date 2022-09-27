@@ -1,5 +1,5 @@
 from validate_docbr import PIS 
-
+# Class de validação e mascara do PIS/PASEP
 class DocPis:
   def __init__(self,document):
     if self.validate(document):

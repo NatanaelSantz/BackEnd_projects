@@ -1,9 +1,9 @@
 from documents import *
-
+# tratativa dos dados, e encaminhando os documentos para validações certas.
 if type_doc == "CPF":
   cpf= input("digite seu CPF: ")
   cpf = str(cpf)
-  document1 = Document.create_document(cpf)
+  document1 = Document.create_document(cpf)'  '
   print(f"CPF: %s" % document1)
 elif type_doc == "CNPJ":
   cnpj_s = input("digite seu CNPJ: ")

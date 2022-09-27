@@ -1,6 +1,5 @@
 from validate_docbr import CNH
 
-
 class DocCnh:
   def __init__(self, document):
     if self.validate(document):
