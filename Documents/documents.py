@@ -1,7 +1,7 @@
 from Cpf import DocCpf
 from Cnpj import DocCnpj
 from Cnh import DocCnh
-
+from pis import DocPis
 type_doc = input("Digite o tipo de documento: ").upper()
 
 class Document:
@@ -13,6 +13,8 @@ class Document:
       return DocCnpj(document)
     elif type_doc == "CNH":
       return DocCnh(document)
+    elif type_doc == "PIS":
+      return DocPis(document)
     else:
       raise ValueError("Invalid document, missing digits!")
 
