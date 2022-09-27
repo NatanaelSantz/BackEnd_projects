@@ -3,7 +3,7 @@ from documents import *
 if type_doc == "CPF":
   cpf= input("digite seu CPF: ")
   cpf = str(cpf)
-  document1 = Document.create_document(cpf)'  '
+  document1 = Document.create_document(cpf)
   print(f"CPF: %s" % document1)
 elif type_doc == "CNPJ":
   cnpj_s = input("digite seu CNPJ: ")
@@ -25,6 +25,8 @@ else:
 
 
 
-
-# 10630743000107
-# 50440192838
+#info the test
+# 10630743000107 - CNPJ
+# 50440192838 - CPF
+# 29333534733 - PIS/PASEP
+# 13464240820 - CNH
