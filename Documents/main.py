@@ -24,7 +24,6 @@ else:
   raise ValueError("Unknown type doc: %s" % type_doc)
 
 
-
 #info the test
 # 10630743000107 - CNPJ
 # 50440192838 - CPF
