@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pandas = "*"
+psycopg2 = "*"
+pygresql = "*"
 
 [dev-packages]
 
