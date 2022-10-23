@@ -1,4 +1,5 @@
-from documents import *
+from Documents.documents import *
+from src import app
 # tratativa dos dados, e encaminhando os documentos para validações certas.
 if type_doc == "CPF":
   cpf= input("digite seu CPF: ")
@@ -29,3 +30,8 @@ else:
 # 50440192838 - CPF
 # 29333534733 - PIS/PASEP
 # 13464240820 - CNH
+
+
+if __name__ == '__main__':
+    app.run()
+        
