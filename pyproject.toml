@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "backend-projects"
+version = "0.1.0"
+description = "Fazendo o back-end lidando com o banco de dado (PostgreSQl), ultilizando python"
+authors = ["NatanaelSantz <santosnatanael553@gmail.com>"]
+readme = "README.md"
+packages = [{include = "backend_projects"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+flask = "^2.2.2"
+autopep8 = "^2.0.0"
+psycopg2 = "^2.9.5"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
