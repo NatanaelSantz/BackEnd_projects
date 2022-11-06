@@ -11,6 +11,8 @@ python = "^3.10"
 flask = "^2.2.2"
 autopep8 = "^2.0.0"
 psycopg2 = "^2.9.5"
+validate-docbr = "^1.10.0"
+django = "^4.1.3"
 
 
 [build-system]
