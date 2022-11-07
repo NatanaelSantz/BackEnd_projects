@@ -8,16 +8,16 @@ from django.contrib.auth.models import (
 
 class UsuarioManager(BaseUserManager):
 
-    def create_user(self, email, password):
+    def create_user(self, email, password=None):
         usuarios = self.model(
             email=self.normalize_email(email)
         )
-        User.is_active = True
-        User.is_staff = False
-        User.is_superuser = False
+        usuarios.is_active = True
+        usuarios.is_staff = False
+        usuarios.is_superuser = False
         if password:
-            User.set_password(password)
-        User.save()
+            usuarios.set_password(password)
+        usuarios.save()
         return usuarios
 
     def create_superuser(self, email, password):
@@ -25,11 +25,11 @@ class UsuarioManager(BaseUserManager):
             email=self.normalize_email(email),
             password=password
         )
-        User.is_active = True
-        User.is_staff = True
-        User.is_superuser = True
-        User.set_password(password)
-        User.save()
+        usuario.is_active = True
+        usuario.is_staff = True
+        usuario.is_superuser = True
+        usuario.set_password(password)
+        usuario.save()
         return usuario
 
 
