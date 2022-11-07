@@ -1,26 +1,37 @@
 import psycopg2
-from psycopg2.extensions import ISOLATION_LEVEL_AUTOCOMMIT
-# connection establishment
-conn = psycopg2.connect(
-database='docs_test',
-	user='test',
-	password='password',
-	host='localhost',
-	port= '5432'
-)
-conn.set_isolation_level(ISOLATION_LEVEL_AUTOCOMMIT);
-conn.autocommit = True
+from config import config
 
-# Creating a cursor object
-cursor = conn.cursor()
 
-name_Database = "docs";
-# query to create a database
-sql = ''' CREATE database products ''' +name_Database+";"
+def connect():
+    """ Connect to the PostgreSQL database server """
+    conn = None
+    try:
+        # read connection parameters
+        params = config()
 
-# executing above query
-cursor.execute(sql)
-print("Database has been created successfully !!");
+        # connect to the PostgreSQL server
+        print('Connecting to the PostgreSQL database...')
+        conn = psycopg2.connect(**params)
+        # create a cursor
+        cur = conn.cursor()
 
-# Closing the connection
-conn.close()
+        # execute a statement
+        print('PostgreSQL database version:')
+        cur.execute('SELECT version()')
+
+        # display the PostgreSQL database server version
+        db_version = cur.fetchone()
+        print(db_version)
+
+        # close the communication with the PostgreSQL
+        cur.close()
+    except (Exception, psycopg2.DatabaseError) as error:
+        print(error)
+    finally:
+        if conn is not None:
+            conn.close()
+            print('Database connection closed.')
+
+
+if __name__ == '__main__':
+    connect()
